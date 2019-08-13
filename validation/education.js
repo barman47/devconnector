@@ -10,11 +10,11 @@ module.exports = function validateExperienceInput(data) {
     data.from = !isEmpty(data.from) ? data.from : '';
 
     if (Validator.isEmpty(data.school)) {
-        errors.school = 'School is field is required'
+        errors.school = 'School field is required'
     }
 
     if (Validator.isEmpty(data.degree)) {
-        errors.degree = 'Degree is field is required'
+        errors.degree = 'Degree field is required'
     }
 
     if (Validator.isEmpty(data.fieldofstudy)) {

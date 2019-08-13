@@ -109,7 +109,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 
     // Skills - Split into array
     if(typeof req.body.skills != 'undefined') {
-        profileFields.skils = req.body.skills.split(',');
+        profileFields.skills = req.body.skills.split(',');
     }
 
     // Social 
@@ -119,6 +119,8 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     if(req.body.facebook) profileFields.social.facebook = req.body.facebook;
     if(req.body.linkedin) profileFields.social.linkedin = req.body.linkedin;
     if(req.body.instagram) profileFields.social.instagram = req.body.instagram;
+
+    console.log(req.body.skills);
 
     Profile.findOne({ user: req.user.id })
         .then(profile => {
